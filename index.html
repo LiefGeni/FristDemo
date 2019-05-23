@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>title</title>
+  <!-- rem实现适配 -->
+  <script type="text/javascript">
+    // 页面打开 立即计算
+    document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+    // 尺寸更改也会重新计算
+    // 这里 写这个事件的目的是 是为了 让我们在 桌面端测试时 可以自动计算 移动端
+    window.onresize = function () {
+      document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+    }
+  </script>
+
+  <!-- swiper css -->
+  <!-- 为了 降低 请求的 次数 把 swiper的样式 也合并 -->
+  <!--<link rel = "stylesheet" type="text/css" href = "lib/swiper/swiper.min.css" / >-->
+
+  <!-- 在 swiper样式的后面导入 避免 出现覆盖问题
+       swiper的样式 页合并完毕了
+   -->
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+  <!-- loading页面 -->
+  <div class="loading" >
+    <div class="rider"></div>
+    <div class="progress">
+      <div class="step"></div>
+    </div>
+    <div class="info"></div>
+    <!-- 外卖的logo -->
+    <div class="logo"></div>
+    <!-- 版权信息 -->
+    <div class="copyright">@ 2017 DuBai Waimai Produced</div>
+  </div>
+  <!-- 欢迎页 布局 -->
+  <div class="welcome" >
+    <div class="info">
+      <div class="hello"></div>
+    </div>
+    <!-- 云-->
+    <div class="cloud"></div>
+    <!-- 草地 -->
+    <div class="grass1"></div>
+    <!-- 熊笼 -->
+    <div class="bear-box">
+      <div class="bear"></div>
+      <div class="smoke"></div>
+    </div>
+    <!-- 树 -->
+    <div class="trees"></div>
+    <!-- 草2 -->
+    <div class="grass2"></div>
+
+    <!-- 旋转的按钮 -->
+    <div class="rotate-btn-box">
+      <div class="btn"></div>
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+    </div>
+  </div>
+
+  <!-- swiper的结构 -->
+  <div class="waimai-container">
+    <div class="swiper-wrapper">
+      <!-- 轮播页面1 -->
+      <div class="swiper-slide page1">
+        <div class="title">
+          <h3>生活中,</h3>
+          <p>偶尔会这样哦!</p>
+          <div class="line"></div>
+        </div>
+        <!--  轮播的盒子1 -->
+        <div class="scroll-page1" style='display:none'>
+          <div class="bg"></div>
+          <div class="person">
+            <!-- 一摞纸 -->
+            <div class="files">
+              <!-- 纸1-->
+              <div class="paper1"></div>
+              <!-- 纸2-->
+              <div class="paper2"></div>
+            </div>
+          </div>
+
+          <div class="message-container">
+            <div class="info"></div>
+          </div>
+        </div>
+        <!--  轮播的盒子2 -->
+        <div class="scroll-page2" style='display:none'>
+          <div class="bg"></div>
+          <div class="person">
+            <div class="leg1"></div>
+            <div class="leg2"></div>
+          </div>
+          <div class="message-container">
+            <div class="info"></div>
+          </div>
+        </div>
+        <!--  轮播的盒子3 -->
+        <div class="scroll-page3">
+          <div class="bg"></div>
+          <div class="person">
+            <div class="word1"></div>
+            <div class="word2"></div>
+            <div class="word3"></div>
+            <div class="word4"></div>
+          </div>
+          <div class="message-container">
+            <div class="info"></div>
+          </div>
+        </div>
+        <!-- 因为 都有 球 所以放到外面 -->
+        <div class="sphere"></div>
+        <!-- 熊 -->
+        <div class="bear"></div>
+      </div>
+      <!-- 轮播页面2 -->
+      <div class="swiper-slide page2">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>这时候,</h3>
+          <p>如果有一份好吃的外卖。。。<br>刚好送过来哦</p>
+          <div class="line"></div>
+        </div>
+        <!-- 背景 -->
+        <div class="bg"></div>
+        <!-- 熊 -->
+        <div class="bear">
+          <!-- 表情1 -->
+          <div class="face1"></div>
+          <!-- 表情2 -->
+          <div class="face2"></div>
+          <!-- 熊掌 -->
+          <div class="hand-left"></div>
+          <div class="hand-right"></div>
+        </div>
+        <!-- 星球 -->
+        <div class="sphere"></div>
+        <!-- 桌子 -->
+        <div class="table"></div>
+        <!-- 食物 -->
+        <div class="food"></div>
+      </div>
+      <!-- 轮播页面3 -->
+      <div class="swiper-slide page3">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>那时候,</h3>
+          <p>如果一碗地沟油炒饭<br>刚好送到😁</p>
+          <div class="line"></div>
+        </div>
+        <!-- 背景 -->
+        <div class="bg"></div>
+        <!--  熊-->
+        <div class="bear"></div>
+        <!--  星球-->
+        <div class="sphere"></div>
+        <!-- 牌子1 -->
+        <div class="license"></div>
+        <div class="oil"></div>
+        <div class="evil"></div>
+      </div>
+      <!-- 轮播页面4 -->
+      <div class="swiper-slide page4">
+         <!-- 标题 -->
+        <div class="title">
+          <h3>度百外卖</h3>
+          <p>绝对不送地沟油<br>买10送咸鸭蛋</p>
+          <div class="line"></div>
+        </div>
+        <div class="bg"></div>
+        <div class="bear"></div>
+        <div class="sphere"></div>
+        <div class="card1"></div>
+        <div class="card2"></div>
+        <div class="card3"></div>
+      </div>
+      <!-- 轮播页面5 -->
+      <div class="swiper-slide page5">
+         <!-- 标题 -->
+        <div class="title">
+          <h3>只要不下刀子</h3>
+          <p>下什么....<br>我都准时送达</p>
+          <div class="line"></div>
+        </div>
+        <div class="bg"></div>
+        <div class="bear">
+          <div class="smoke"></div>
+        </div>
+        <div class="sphere"></div>
+        <div class="cloud"></div>
+      </div>
+      <!-- 轮播页面6 -->
+      <div class="swiper-slide page6">
+          <!-- 标题 -->
+        <div class="title">
+          <h3>吃啥送啥</h3>
+          <p>礼物拿到你手软<br>省钱省到家</p>
+          <div class="line"></div>
+        </div>
+        <div class="bg"></div>
+        <div class="bear">
+          <div class="gift-box">
+            <div class="gift1"></div>
+            <div class="gift2"></div>
+            <div class="gift3"></div>
+            <div class="gift4"></div>
+            <div class="gift5"></div>
+            <div class="gift6"></div>
+            <div class="gift7"></div>
+            <div class="gift8"></div>
+            <div class="gift9"></div>
+            <div class="gift10"></div>
+            <div class="gift11"></div>
+            <div class="gift12"></div>
+          </div>
+        </div>
+        <div class="sphere"></div>
+      </div>
+      <!-- 轮播页面7 -->
+      <div class="swiper-slide page7">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>我这么努力</h3>
+          <p>只是为了你<br>(づ￣ 3￣)づ</p>
+          <div class="line"></div>
+        </div>
+        <div class="streetlight">
+          <div class="light"></div>
+        </div>
+        <div class="motobike"></div>
+        <div class="sphere"></div>
+        <div class="bear"></div>
+        <div class="share"></div>
+        <div class="info">waimai.dubai.com</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!-- swiper的js -->
+<script type="text/javascript" src="lib/swiper/swiper.min.js"></script>
+
+<!-- zepto的js -->
+<script type="text/javascript" src="lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="lib/zepto/event.js"></script>
+<script type="text/javascript" src="lib/zepto/touch.js"></script>
+<script type="text/javascript" src="lib/zepto/fx.js"></script>
+<script type="text/javascript" src="lib/zepto/fx_methods.js"></script>
+
+<!-- 调用 js  设置swiper -->
+<script type="text/javascript">
+// 设置 swiper 
+  var swiper = new Swiper('.waimai-container', {
+    direction: 'vertical'
+  })
+
+
+  //  1.页面打开 稍等一会 开启定时器 
+  $(function(){
+    // 第一页的 js效果 
+    setTimeout(function() {
+        $('.loading').addClass('animate');
+        // 使用js的方式演示
+        // document.querySelector('.loading .step').addEventListener('animationend',function(){
+        //   console.log('我播完了');
+        // })
+        $('.loading .step').on('animationend',function(){
+          console.log('jq绑定 end');
+          $('.loading').fadeOut(100,function(){
+            // 淡出之后 为 welcome 添加 animate
+            $('.welcome').addClass('animate');
+          });
+        })
+    }, 1000);
+
+    // 第二页的 按钮的 长按
+    $('.welcome .rotate-btn-box').longTap(function(){
+      console.log('按了好久哦');
+      // $('.bear-box').css('animation','none');
+      $('.welcome').fadeOut(1000,function(){
+        // 为 swiper的 第一页 添加 animate class
+        $('.page1').addClass('animate');
+      });
+    })
+  })
+</script>

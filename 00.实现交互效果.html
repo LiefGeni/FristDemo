@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>title</title>
+  <!-- 导入 swiper的 css -->
+  <link rel="stylesheet" type="text/css" href="lib/swiper/swiper.min.css" />
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .swiper-container {
+      height: 100%;
+    }
+
+    .swiper-slide {
+      font-size: 100px;
+      border: 10px solid hotpink;
+      box-sizing: border-box;
+    }
+
+    .loading {
+      background-color: skyblue;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      z-index: 2;
+    }
+    .welcome {
+      height: 100%;
+      width: 100%;
+      background-color: lightseagreen;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 切换的页面 swiper实现 -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">1</div>
+      <div class="swiper-slide">2</div>
+      <div class="swiper-slide">3</div>
+      <div class="swiper-slide">4</div>
+      <div class="swiper-slide">5</div>
+      <div class="swiper-slide">6</div>
+      <div class="swiper-slide">7</div>
+    </div>
+  </div>
+  <!-- loading页面 -->
+  <div class="loading"></div>
+  <!-- 欢迎页面 -->
+  <div class="welcome"></div>
+</body>
+
+</html>
+<script type="text/javascript" src="lib/swiper/swiper.min.js"></script>
+
+<!-- 导入 zepto -->
+<script type="text/javascript" src="lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="lib/zepto/event.js"></script>
+<script type="text/javascript" src="lib/zepto/fx.js"></script>
+<script type="text/javascript" src="lib/zepto/touch.js"></script>
+<!-- 提供了 fadeout的方法 -->
+<script type="text/javascript" src="lib/zepto/fx_methods.js"></script>
+
+<script type="text/javascript">
+  // 使用 swiper 实现 滑动切换效果
+  var swiper = new Swiper('.swiper-container', {
+    direction: 'vertical',
+  });
+
+  //  点击消失
+  $('.loading').click(function () {
+    $(this).fadeOut();
+  })
+  $('.welcome').click(function () {
+    $(this).fadeOut();
+  })
+</script>
